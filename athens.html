@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+body {
+    background-color: rgb(126, 126, 126);
+}
+h2 {
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: beige;
+    background-color: rgb(111, 97, 97);
+    display: table;
+    margin: 10px auto;
+    padding: 5px 15px;
+}
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+#about {
+    background-color: #3f3d3d; 
+}
+#contact {
+    background-color: #534e4e; 
+}
+.header_1 {
+    float: left; 
+    color: rgb(255, 255, 255); 
+    text-align: center;
+    padding: 10px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    border-radius: 7px; 
+    margin-left: 5px; 
+}
+.header {
+    position: sticky; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: #6b6b6b; 
+    padding: 10px 15px;
+    z-index: 1000;
+}
+.header::after {
+    content: ""; 
+    display: table; 
+    clear: both; 
+}
+.header_1:hover {
+    background-color: #ddd;
+}
+.header_1.active {
+    background-color: rgb(0,0,0); 
+    color: rgb(255, 251, 0); 
+}
+#cities {
+    background-color: #2929296f;
+}
+.city-container {
+    display: flex; 
+    flex-wrap: wrap ;
+    gap: 20px; 
+    justify-content: center; 
+    padding: 20px; 
+    background-color:white;
+}
+.city-card-link {
+    text-decoration: none; 
+    color: white; 
+    display: block;
+}
+.city-box {
+    background-color: rgb(0, 0, 0); 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 4px rgba(134, 126, 126, 0.1); 
+    text-align: center; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+.header-right {
+    float: right;
+
+}
+.city-box:hover {
+    transform: translateY(-8px) scale(1.05); 
+    background-color: rgb(149, 145, 145);
+}
+.city-box.active {
+    transform: scale(1.1); 
+    background-color: rgb(0,0,0); 
+    color: rgb(114, 202, 198); 
+}
+
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center; font-size: 25; font-family:'Times New Roman', Times, serif;
+background-color:rgb(73, 63, 63); color:antiquewhite">Athens</h1>
+
+<p style="font-size: 20px; font-style:italic;
+font-family:Arial, Helvetica, sans-serif; text-align:center; 
+color:beige;">Athens, the capital city of Greece, is widely recognized as the cradle of Western civilization. 
+    It is known as the birthplace of democracy, where the foundations of political systems still used today were first developed. 
+    The city also played a major role in shaping Western philosophy, being home to great thinkers such as Socrates, Plato, and Aristotle, whose ideas continue to influence modern education and ethics. 
+    In addition, Athens is considered one of the earliest centers of theater, where dramatic arts such as tragedy and comedy were first performed in large open-air amphitheaters.</p> 
+    
+<p style="font-size: 20px; font-style:italic; 
+    font-family:Arial, Helvetica, sans-serif; text-align:center;
+    color:beige;">The city’s historical importance is deeply rooted in its golden age, particularly during the 5th century BC, when it became a powerful cultural and intellectual hub. 
+        This period produced many of its most famous monuments, including the Acropolis and the Parthenon, 
+        which still stand today as symbols of ancient Greek achievement. 
+        These structures reflect the architectural brilliance and artistic mastery of classical Greece and continue 
+        to attract millions of visitors every year.</p>
+         
+<p style="font-size: 20px; font-style: italic; font-family:Arial, Helvetica, sans-serif;
+text-align: center; color: beige;">Athens is also celebrated for its vibrant Mediterranean culture, 
+            which blends ancient traditions with modern urban life. The city has a lively atmosphere filled with museums, 
+            street markets, traditional tavernas, and contemporary art spaces. 
+            It is also historically significant in the context of the Olympic Games, 
+            as it hosted the first modern Olympics in 1896 and again in 2004, reinforcing its connection to 
+            athletic excellence and international unity.</p>
+            
+<p style="font-size: 20px; font-style: italic;
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: center; 
+            color:beige;">Today,it
+                 remains a dynamic metropolis that balances its rich historical heritage with modern development. 
+                 It serves as Greece’s political, economic, and cultural center, while still preserving its ancient l
+                 andmarks and traditions. The city continues to evolve as a global tourist destination, offering a unique
+                  blend of history, philosophy, architecture, and Mediterranean lifestyle.</p>
+
+<img src="athens.jpeg" alt="Athens" style="width:100" height="500">
+
+
+<h2>Religion: 
+    <span style="font-weight: normal; font-style: italic;">Eastern Orthodox</span>
+</h2>
+
+<h2>Country: 
+    <span style="font-weight: normal; font-style: italic;">Greece</span>
+</h2>
+
+<h2>Founding Date: 
+    <span style="font-weight: normal; font-style: italic;">1412 BCE</span>
+</h2>
+
+<h2>Population: 
+    <span style="font-weight: normal; font-style: italic;">3.15 to 3.16 million people</span>
+</h2>
+
+<h2>Notable Landmarks: 
+    <span style="font-weight: normal; font-style: italic;">Acropolis and Parthenon Temple</span>
+</h2>
+
+<script>
+
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView( {
+            behavior: "smooth"
+        });
+    }
+    const cards = document.querySelectorAll(".city-box");
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            cards.forEach(c => c.classList.remove("active")); 
+            card.classList.add("active");
+        });
+    });
+    document.body.style.backgroundColor = "#202120";
+
+</script>
+
+<div class="city-container">
+
+     <a href="web1.html" class="city-card-link">
+        <div class="city-box">
+            <span>Home</span>
+        </div>
+    </a>
+
+    <a href="rome.html" class="city-card-link">
+        <div class="city-box">
+           <span>Rome</span>
+        </div>
+    </a>
+
+    <a href="palembang.html" class="city-card-link">
+        <div class="city-box">
+          <span>Palembang</span>
+        </div>
+    </a>
+
+    <a href="hanoi.html" class="city-card-link">
+       <div class="city-box">
+        <span>Hanoi</span>
+       </div>
+    </a>
+
+    <a href="amman.html" class="city-card-link">
+       <div class="city-box">
+          <span>Amman</span>
+       </div>
+    </a>
+</div>
+
+
+</body>
+</html>

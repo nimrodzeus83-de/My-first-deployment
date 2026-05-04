@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+body {
+    background-color: rgb(51, 51, 51);
+}
+h2 {
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(73, 70, 65);
+    background-color: rgb(181, 181, 181);
+    display: table;
+    margin: 10px auto;
+    padding: 5px 15px;
+}
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+#about {
+    background-color: #3f3d3d; 
+}
+#contact {
+    background-color: #534e4e; 
+}
+.header_1 {
+    float: left; 
+    color: rgb(255, 255, 255); 
+    text-align: center;
+    padding: 10px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    border-radius: 7px; 
+    margin-left: 5px; 
+}
+.header {
+    position: sticky; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: #6b6b6b; 
+    padding: 10px 15px;
+    z-index: 1000;
+}
+.header::after {
+    content: ""; 
+    display: table; 
+    clear: both; 
+}
+.header_1:hover {
+    background-color: #ddd;
+}
+.header_1.active {
+    background-color: rgb(0,0,0); 
+    color: rgb(255, 251, 0); 
+}
+#cities {
+    background-color: #2929296f;
+}
+.city-container {
+    display: flex; 
+    flex-wrap: wrap ;
+    gap: 20px; 
+    justify-content: center; 
+    padding: 20px; 
+    background-color: white;
+}
+.city-card-link {
+    text-decoration: none; 
+    color: white; 
+    display: block;
+}
+.city-box {
+    background-color: rgb(0, 0, 0); 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 4px rgba(134, 126, 126, 0.1); 
+    text-align: center; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+.header-right {
+    float: right;
+
+}
+.city-box:hover {
+    transform: translateY(-8px) scale(1.05); 
+    background-color: rgb(146, 134, 157); 
+}
+.city-box.active {
+    transform: scale(1.1); 
+    background-color: rgb(0,0,0); 
+    color: rgb(186, 128, 202);
+}
+
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center; font-size: 25; font-family:'Times New Roman', Times, serif;
+background-color:rgb(181, 181, 181); color:rgb(73, 70, 65)">Amman</h1>
+
+<p style="font-size: 20px; font-style:italic;
+font-family:Arial, Helvetica, sans-serif; text-align:center; 
+color:beige;">Amman is the capital and largest city of Jordan and is considered one of the oldest continuously 
+inhabited cities in the world, with a history that dates back several thousand years. 
+Built on a series of hills, Amman has long served as a cultural, political, and economic center in the region.</p> 
+    
+<p style="font-size: 20px; font-style:italic; 
+    font-family:Arial, Helvetica, sans-serif; text-align:center;
+    color:beige;">In ancient times, the city was known as Rabbath Ammon and later as 
+    Philadelphia during the Greco-Roman period, when it became part of the Roman Empire. 
+    Remnants of this era can still be seen today in landmarks such as the Roman Theatre of Amman, 
+    a well-preserved structure that once hosted thousands of spectators, and the Amman Citadel, 
+    which contains ruins from multiple civilizations, 
+    including Roman, Byzantine, and Umayyad periods.</p>
+         
+<p style="font-size: 20px; font-style: italic; font-family:Arial, Helvetica, sans-serif;
+text-align: center; color: beige;">Amman has also been influenced by various cultures and empires over the centuries, 
+including Islamic caliphates and Ottoman rule. These influences have shaped the city’s architecture, 
+traditions, and identity, making it a unique blend of ancient history and modern development.
+
+Today, Amman is a thriving modern city known for its vibrant culture and welcoming atmosphere. 
+It serves as the political and administrative center of Jordan while also being a hub for education, 
+business, and tourism. The city features a mix of old and new, 
+from traditional markets and historic mosques to contemporary buildings and urban districts.</p>
+            
+<p style="font-size: 20px; font-style: italic;
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: center; 
+            color:beige;">Amman is also recognized for its rich culinary scene, offering traditional dishes such as mansaf, 
+            the national dish of Jordan, and falafel, a popular street food across the region. 
+            With its deep historical roots and ongoing modernization, 
+            Amman stands as an important and fascinating city that bridges the ancient and modern worlds.</p>
+
+<img src="amman.jpeg" alt="Amman" style="width:100" height="500">
+
+
+<h2>Religion: 
+    <span style="font-weight: normal; font-style: italic;">Islam</span>
+</h2>
+
+<h2>Country: 
+    <span style="font-weight: normal; font-style: italic;">Jordan</span>
+</h2>
+
+<h2>Founding Date: 
+    <span style="font-weight: normal; font-style: italic;">7000-7250 BC</span>
+</h2>
+
+<h2>Population: 
+    <span style="font-weight: normal; font-style: italic;">2,295,250 million</span>
+</h2>
+
+<h2>Notable Landmarks: 
+    <span style="font-weight: normal; font-style: italic;">Amman Citadel and Roman Theatre
+    </span>
+</h2>
+
+<script>
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({
+            behavior:"smooth"
+        });
+    }
+    const cards = document.querySelectorAll(".city-box");
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            cards.forEach(c => c.classList.remove("active"));
+            card.classList.add("active");
+        });
+    });
+    document.body.style.backgroundColor = "#343434";
+
+</script>
+
+<div class="city-container">
+    
+     <a href="web1.html" class="city-card-link">
+        <div class="city-box">
+            <span>Home</span>
+        </div>
+    </a>
+
+    <a href="athens.html" class="city-card-link">
+        <div class="city-box">
+           <span>Athens</span>
+        </div>
+    </a>
+
+    <a href="rome.html" class="city-card-link">
+        <div class="city-box">
+          <span>Rome</span>
+        </div>
+    </a>
+
+    <a href="Palembang.html" class="city-card-link">
+       <div class="city-box">
+        <span>Palembang</span>
+       </div>
+    </a>
+
+    <a href="hanoi.html" class="city-card-link">
+       <div class="city-box">
+          <span>Hanoi</span>
+       </div>
+    </a>
+</div>

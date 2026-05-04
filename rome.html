@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+body {
+    background-color: rgb(51, 51, 51);
+}
+h2 {
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: beige;
+    background-color: black;
+    display: table;
+    margin: 10px auto;
+    padding: 5px 15px;
+}
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+#about {
+    background-color: #3f3d3d; 
+}
+#contact {
+    background-color: #534e4e; 
+}
+.header_1 {
+    float: left; 
+    color: rgb(255, 255, 255); 
+    text-align: center;
+    padding: 10px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    border-radius: 7px; 
+    margin-left: 5px; 
+}
+.header {
+    position: sticky; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: #6b6b6b; 
+    padding: 10px 15px;
+    z-index: 1000;
+}
+.header::after {
+    content: ""; 
+    display: table; 
+    clear: both; 
+}
+.header_1:hover {
+    background-color: #ddd;
+}
+.header_1.active {
+    background-color: rgb(0,0,0); 
+    color: rgb(255, 251, 0); 
+}
+#cities {
+    background-color: #2929296f;
+}
+.city-container {
+    display: flex; 
+    flex-wrap: wrap ;
+    gap: 20px; 
+    justify-content: center; 
+    padding: 20px; 
+    background-color: white;
+}
+.city-card-link {
+    text-decoration: none; 
+    color: white; 
+    display: block;
+}
+.city-box {
+    background-color: rgb(0, 0, 0); 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 4px rgba(134, 126, 126, 0.1); 
+    text-align: center; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+.header-right {
+    float: right;
+
+}
+.city-box:hover {
+    transform: translateY(-8px) scale(1.05);
+    background-color: rgb(138, 112, 112); 
+}
+.city-box.active {
+    transform: scale(1.1); 
+    background-color: rgb(0,0,0); 
+    color: rgb(64, 169, 169);
+}
+
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center; font-size: 25; font-family:'Times New Roman', Times, serif;
+background-color:black; color:antiquewhite">Rome</h1>
+
+<p style="font-size: 20px; font-style:italic;
+font-family:Arial, Helvetica, sans-serif; text-align:center; 
+color:beige;">Rome serves as the capital city of Italy and is widely regarded as one of the oldest continuously 
+inhabited cities in the world. With a history spanning over 2,500 years, it has played a central role 
+in shaping global civilization, particularly in the fields of art, architecture, politics, and culture. 
+Often called the “Eternal City,” Rome stands as a living museum where ancient history and modern life coexist.</p> 
+    
+<p style="font-size: 20px; font-style:italic; 
+    font-family:Arial, Helvetica, sans-serif; text-align:center;
+    color:beige;">The city rose to prominence as the heart of the powerful Roman Empire, 
+    one of the greatest empires in human history. From its legendary founding in 753 BCE, Rome expanded 
+    its influence across Europe, North Africa, and parts of Asia, spreading Roman law, engineering, language, 
+    and governance systems that still influence the modern world today. The legacy of Roman innovation can be seen in roads, 
+    aqueducts, and monumental structures that have stood for centuries.
+    Rome is also home to some of the most iconic landmarks ever built. 
+    Among these are the Colosseum, where gladiatorial contests once took place, the Roman Forum, 
+    which served as the center of political and social life, and the Pantheon, 
+    famous for its massive dome and architectural brilliance. 
+    These structures reflect the engineering mastery and artistic achievements of ancient Rome.
+</p>
+         
+<p style="font-size: 20px; font-style: italic; font-family:Arial, Helvetica, sans-serif;
+text-align: center; color: beige;">In addition to its ancient heritage, 
+Rome holds deep religious significance as the center of the Roman Catholic Church. 
+It is home to Vatican City, the world’s smallest independent state and the residence of the Pope.
+ Within Vatican City lies St. Peter’s Basilica, one of the largest and most important churches in Christianity, 
+along with the Sistine Chapel, renowned for its breathtaking ceiling painted by Michelangelo.</p>
+            
+<p style="font-size: 20px; font-style: italic;
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: center; 
+            color:beige;">Today, Rome continues to thrive as a vibrant modern city while preserving its rich past. 
+            It is known for its lively streets, delicious cuisine such as pasta and pizza, and its influence on fashion, 
+            film, and global tourism. Millions of visitors travel to Rome each year to experience its unique blend of history, 
+            culture, and timeless beauty, making it one of the most important and fascinating cities in the world.
+</p>
+
+<img src="rome.jpeg" alt="Rome" style="width:100" height="500">
+
+
+<h2>Religion: 
+    <span style="font-weight: normal; font-style: italic;">Catholicism</span>
+</h2>
+
+<h2>Country: 
+    <span style="font-weight: normal; font-style: italic;">Italy</span>
+</h2>
+
+<h2>Founding Date: 
+    <span style="font-weight: normal; font-style: italic;">753 BCE</span>
+</h2>
+
+<h2>Population: 
+    <span style="font-weight: normal; font-style: italic;">2.74 to 2.75 million</span>
+</h2>
+
+<h2>Notable Landmarks: 
+    <span style="font-weight: normal; font-style: italic;">Colosseum,
+        Roman Forum, and Pantheon
+    </span>
+</h2>
+
+<script>
+
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+    const cards = document.querySelectorAll(".city-box");
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            cards.forEach(c => c.classList.remove("active"));
+            cards.classList.add("active");
+        });
+    });
+    document.body.style.backgroundColor="#353935";
+
+</script>
+
+<div class="city-container">
+    
+     <a href="web1.html" class="city-card-link">
+        <div class="city-box">
+            <span>Home</span>
+        </div>
+    </a>
+
+    <a href="athens.html" class="city-card-link">
+        <div class="city-box">
+           <span>Athens</span>
+        </div>
+    </a>
+
+    <a href="palembang.html" class="city-card-link">
+        <div class="city-box">
+          <span>Palembang</span>
+        </div>
+    </a>
+
+    <a href="hanoi.html" class="city-card-link">
+       <div class="city-box">
+        <span>Hanoi</span>
+       </div>
+    </a>
+
+    <a href="amman.html" class="city-card-link">
+       <div class="city-box">
+          <span>Amman</span>
+       </div>
+    </a>
+</div>
+
+
+</body>
+</html>
